@@ -37,22 +37,22 @@ requiring per-camera empirical calibration.
 
 ## Setup
 
-\`\`\`bash
+```bash
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-\`\`\`
+```
 
 ## Running Tests
 
-\`\`\`bash
+```bash
 python -m pytest tests/ -v
-\`\`\`
+```
 
 ## Visualizing Annotations
 
-\`\`\`bash
+```bash
 python scripts/visualize_annotations.py data/raw/cepb/scenes_dev <scene_id> <camera_id>
-\`\`\`
+```
 
 Supported camera IDs: \`left\`, \`middle\`, \`right\`.
