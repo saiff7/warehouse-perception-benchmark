@@ -55,4 +55,4 @@ python -m pytest tests/ -v
 python scripts/visualize_annotations.py data/raw/cepb/scenes_dev <scene_id> <camera_id>
 ```
 
-Supported camera IDs: \`left\`, \`middle\`, \`right\`.
+Supported camera IDs: `left`, `middle`, `right`.
