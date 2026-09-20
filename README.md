@@ -70,17 +70,59 @@ A ROS2 node (`perception_pkg/stereo_depth_publisher.py`) wraps the validated ste
 ## Repository Structure
 
 warehouse-perception-benchmark/
-├── src/warehouse_perception/
-│ ├── depth/stereo.py # Stereo depth estimation (fixed numDisparities bug)
-│ └── dataset/projection.py # Ground-truth 3D-to-2D projection utilities
-├── data/raw/cepb/scenes_dev/ # CEPB dataset (not included in repo — see Data section)
-├── data/yolo/ # Auto-generated YOLO labels from ground truth
-├── output/ # Generated reports, visualizations, trained weights
-├── run_report.py # Per-object disparity error report vs. ground truth
-├── gen_yolo_labels_v2.py # Converts GT cuboids to YOLO bounding-box labels
-├── split_yolo_dataset.py # Train/val split by scene (avoids geometry leakage)
-├── detect_and_depth.py # Detection + depth integration (unverified, see caveats)
-└── visualize_disparity.py # Side-by-side left/right/disparity visualization
+├── src/
+│   └── warehouse_perception/
+│       ├── __init__.py
+│       ├── depth/
+│       │   ├── __init__.py
+│       │   └── stereo.py
+│       │       # Stereo depth estimation
+│       │       # Fixed numDisparities configuration bug
+│       │
+│       └── dataset/
+│           ├── __init__.py
+│           └── projection.py
+│               # Ground-truth 3D → 2D projection utilities
+│
+├── data/
+│   ├── raw/
+│   │   └── cepb/
+│   │       └── scenes_dev/
+│   │           # CEPB dataset
+│   │           # Not included in repository — see Data section
+│   │
+│   └── yolo/
+│       # Auto-generated YOLO labels from ground-truth cuboids
+│
+├── output/
+│   ├── reports/
+│   ├── visualizations/
+│   └── weights/
+│       # Generated reports, visualizations, and trained weights
+│
+├── run_report.py
+│   # Per-object disparity error report against ground truth
+│
+├── gen_yolo_labels_v2.py
+│   # Converts ground-truth 3D cuboids
+│   # into YOLO 2D bounding-box labels
+│
+├── split_yolo_dataset.py
+│   # Splits YOLO dataset by scene
+│   # to avoid geometry/data leakage
+│
+├── detect_and_depth.py
+│   # Object detection + stereo depth integration
+│   # UNVERIFIED — see caveats
+│
+├── visualize_disparity.py
+│   # Side-by-side left image, right image,
+│   # and disparity visualization
+│
+├── README.md
+├── requirements.txt
+└── .gitignore
+
 ## Data
 
 This repo does not include the CEPB dataset images/labels due to size. Place the dataset under `data/raw/cepb/scenes_dev/` following the existing naming convention (`{position}_camera_{lighting}_scene_{n}_rgb.png`, `GT_{position}_camera_{n}.yaml`) before running any script.
