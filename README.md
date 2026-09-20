@@ -81,7 +81,6 @@ warehouse-perception-benchmark/
 ├── split_yolo_dataset.py # Train/val split by scene (avoids geometry leakage)
 ├── detect_and_depth.py # Detection + depth integration (unverified, see caveats)
 └── visualize_disparity.py # Side-by-side left/right/disparity visualization
-
 ## Data
 
 This repo does not include the CEPB dataset images/labels due to size. Place the dataset under `data/raw/cepb/scenes_dev/` following the existing naming convention (`{position}_camera_{lighting}_scene_{n}_rgb.png`, `GT_{position}_camera_{n}.yaml`) before running any script.
