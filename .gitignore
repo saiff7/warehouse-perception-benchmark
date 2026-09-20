@@ -22,3 +22,6 @@ yolov8n.pt
 __pycache__/
 *.pyc
 data/yolo/
+ros2/perception_pkg/build/
+ros2/perception_pkg/install/
+ros2/perception_pkg/log/
