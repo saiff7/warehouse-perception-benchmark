@@ -15,3 +15,10 @@ ros_ws/log/
 .ipynb_checkpoints/
 results/vlm_cache/
 .env
+data/raw/
+runs/
+yolov8n.pt
+.venv/
+__pycache__/
+*.pyc
+data/yolo/
